@@ -60,7 +60,7 @@ function GraphTabs({domain}) {
   console.log(domaindata);
   const companies = domaindata.Companies
   const skills = domaindata.Skills
-  const investments = domaindata.Investments
+  const institutions = domaindata.Institutions
   const publications = domaindata.Publications
   const avgciting = domaindata.AvgCiting
   const avgpatent = domaindata.AvgPatent
