@@ -151,7 +151,7 @@ function IndividualDomain() {
   const sendGetRequestSearch = async () => {
     try {
         const datasearchdata = await axios.
-        get(`http://3.110.131.196:8080/api/Individual/searchdata/`)
+        get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/searchdata/`)
         .then(res => {
           console.log(res)
           const search = res.data;
@@ -168,7 +168,7 @@ function IndividualDomain() {
   const sendGetRequestSearch2 = async () => {
     try {
         const datasearchdata = await axios.
-        get(`http://3.110.131.196:8080/api/Individual/searchdata/`)
+        get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/searchdata/`)
         .then(res => {
           console.log(res)
           const search = res.data;
@@ -185,7 +185,7 @@ function IndividualDomain() {
   const sendGetRequestWord = async () => {
     try {
       const datawordcloud = await axios.
-      get(`http://3.110.131.196:8080/api/Individual/wordcloud`)
+      get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/wordcloud`)
       .then(res => {
         console.log(res)
         const wordcloudwords = res.data;
@@ -202,7 +202,7 @@ function IndividualDomain() {
   const sendGetRequestWord2 = async () => {
     try {
       const datawordcloud = await axios.
-      get(`http://3.110.131.196:8080/api/Individual/wordcloud`)
+      get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/wordcloud`)
       .then(res => {
         console.log(res)
         const wordcloudwords = res.data;

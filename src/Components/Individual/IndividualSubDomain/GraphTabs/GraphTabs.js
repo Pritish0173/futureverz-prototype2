@@ -52,7 +52,7 @@ function GraphTabs({domain}) {
   const sendGetRequestGraph = async () => {
     try {
         const datagraph = await axios.
-        get(`http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
+        get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
         .then(res => {
           console.log(res);
           console.log('success graph');
@@ -70,7 +70,7 @@ function GraphTabs({domain}) {
   const sendGetRequestGraph2 = async () => {
     try {
         const datagraph = await axios.
-        get(`http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
+        get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
         .then(res => {
           console.log(res);
           console.log('success graph');
