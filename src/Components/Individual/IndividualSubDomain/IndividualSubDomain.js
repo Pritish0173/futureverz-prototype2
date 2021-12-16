@@ -139,15 +139,17 @@ function IndividualSubDomain({domain, searchdata}) {
   const [value, setValue] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [reset,setReset] = useState(false);
+  // console.log('subdomain domain: ' + domain);
+  // console.log('subdomain lowercase domain: ' + domain.toLowerCase());
   
   const searchlabel = 'Showing results for ' + domain
 
   const sendGetRequestWord = async () => {
     try {
         const datawordcloud = await axios.
-        get(`https://futureverz.herokuapp.com/api/Individual/wordcloud/` + domain + '/')
+        get(`//3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(`https://futureverz.herokuapp.com/api/Individual/wordcloud/` + domain + '/');
+          console.log(`https://futureverz.herokuapp.com/api/Individual/wordcloud/` + domain.toLowerCase() + '/');
           console.log(res);
           console.log('success wordcloud subdomain');
           const wordcloudwords = res.data;
@@ -157,6 +159,26 @@ function IndividualSubDomain({domain, searchdata}) {
     } catch (err) {
         // Handle Error Here
         console.error(err);
+        sendGetRequestWord2();
+    }
+  };
+
+  const sendGetRequestWord2 = async () => {
+    try {
+        const datawordcloud = await axios.
+        get(`//3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
+        .then(res => {
+          console.log(`https://futureverz.herokuapp.com/api/Individual/wordcloud/` + domain.toLowerCase() + '/');
+          console.log(res);
+          console.log('success wordcloud subdomain');
+          const wordcloudwords = res.data;
+          setWords(wordcloudwords);
+        })
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+        sendGetRequestWord();
     }
   };
 
@@ -300,7 +322,7 @@ function IndividualSubDomain({domain, searchdata}) {
         <h3 className="textforwordcloud">Trending Subdomains in {domain}</h3>
         <div className="wordcloud">
           {words===null && (<Loader />)}
-          {words!=null && (<ReactWordcloud callbacks={callbacks} words={words} options={options} />)}
+          {words!==null && (<ReactWordcloud callbacks={callbacks} words={words} options={options} />)}
         </div>
         <br></br>
         <br></br>

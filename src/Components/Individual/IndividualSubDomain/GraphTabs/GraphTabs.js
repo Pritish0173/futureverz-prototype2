@@ -52,7 +52,7 @@ function GraphTabs({domain}) {
   const sendGetRequestGraph = async () => {
     try {
         const datagraph = await axios.
-        get(`https://futureverz.herokuapp.com/api/Individual/graph/` + domain + '/')
+        get(`http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
         .then(res => {
           console.log(res);
           console.log('success graph');
@@ -63,6 +63,25 @@ function GraphTabs({domain}) {
     } catch (err) {
         // Handle Error Here
         console.error(err);
+        sendGetRequestGraph2();
+    }
+  };
+
+  const sendGetRequestGraph2 = async () => {
+    try {
+        const datagraph = await axios.
+        get(`http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
+        .then(res => {
+          console.log(res);
+          console.log('success graph');
+          const graphdata = res.data;
+          setGraph(graphdata);
+        })
+
+    } catch (err) {
+        // Handle Error Here
+        console.error(err);
+        sendGetRequestGraph();
     }
   };
 
