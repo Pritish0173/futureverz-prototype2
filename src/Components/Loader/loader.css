@@ -1,0 +1,22 @@
+.loader{
+  width: 68%;
+  height: 30em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+}
+.spinner-7 {
+    width:7em;
+    height:7em;
+    --c:radial-gradient(farthest-side,#25b09b 92%,#0000);
+    background: 
+      var(--c) 50% 0,
+      var(--c) 50% 100%,
+      var(--c) 100% 50%,
+      var(--c) 0    50%;
+    background-size:1.2em 1.2em;
+    background-repeat:no-repeat;
+    animation:s7 1s infinite;
+  }
+  @keyframes s7 {to{transform: rotate(.5turn)}}

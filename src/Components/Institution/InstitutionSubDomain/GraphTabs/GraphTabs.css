@@ -1,0 +1,17 @@
+.tabs{
+    width: 78%;
+    margin-left: 12%;
+}
+
+.graphheader{
+  color: steelblue;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .tabs {
+      width: 100%;
+      /* height: 20em; */
+      margin-left: 0%;
+    }
+  }

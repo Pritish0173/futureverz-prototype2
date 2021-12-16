@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+// import Card from 'react-bootstrap/Card';
+// import Grid from '@mui/material/Grid';
+// import Button from '@mui/material/Button';
+import Home from './Home';
+import Individual from './Components/Individual/Individual';
+import Companies from './Components/Companies/Companies';
+import Government from './Components/Government/Government';
+import Institutions from './Components/Institution/Institution';
+import {
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Individual" element={<Individual />} />
+      <Route path="/Companies" element={<Companies />} />
+      <Route path="/Government" element={<Government />} />
+      <Route path="/Institutions" element={<Institutions />} />
+      <Route path="*" element={<div>404 Error: Not Found</div>} /> 
+    </Routes>
   );
 }
 
