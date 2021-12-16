@@ -58,15 +58,12 @@ function GraphTabs({domain}) {
   console.log(dataHorBar);
   const domaindata = dataHorBar.graphData
   console.log(domaindata);
-  // const companies = domaindata.Companies
-  // const skills = domaindata.Skills
-  // const postings = domaindata.Postings
+  const companies = domaindata.Companies
+  const skills = domaindata.Skills
   const investments = domaindata.Investments
-  // const institutions = domaindata.Institutions
-  const countries = domaindata.Countries
-  // const trends = domaindata.Trends
-  const geographic = domaindata.Geographic
-  // const talent = domaindata.talent
+  const publications = domaindata.Publications
+  const avgciting = domaindata.AvgCiting
+  const avgpatent = domaindata.AvgPatent
 
   return (
     <div className="tabs">
@@ -88,25 +85,29 @@ function GraphTabs({domain}) {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <h4 className="graphheader">Comparing acceleration among countries</h4>
-        <HorizontalBar data={geographic} />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <h4 className="graphheader">Active Countries in {domain}</h4>
-        <HorizontalBar data={countries} />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <h4 className="graphheader">Invest stocks on companies(filing more patents and VC funds)</h4>
-        <HorizontalBar data={investments} />
-      </TabPanel>
-      {/* <TabPanel value={value} index={3}>
         <h4 className="graphheader">Top Skills required in {domain}</h4>
         <HorizontalBar data={skills} />
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        <h4 className="graphheader">Top Institutions in {domain}</h4>
+      <TabPanel value={value} index={1}>
+        <h4 className="graphheader">Top Institutions Active in {domain}</h4>
         <HorizontalBar data={institutions} />
-      </TabPanel> */}
+        <br></br>
+        <br></br>
+        <h4 className="graphheader">Trending Publications in {domain}</h4>
+        <HorizontalBar data={publications} />
+        <br></br>
+        <br></br>
+        <h4 className="graphheader">Top Institutions by Average Citing Scholarly Works</h4>
+        <HorizontalBar data={avgciting} />
+        <br></br>
+        <br></br>
+        <h4 className="graphheader">Top Institutions cited average patent count</h4>
+        <HorizontalBar data={avgpatent} />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <h4 className="graphheader">Top Companies Active in {domain}</h4>
+        <HorizontalBar data={companies} />
+      </TabPanel>
     </div>
   );
 }
