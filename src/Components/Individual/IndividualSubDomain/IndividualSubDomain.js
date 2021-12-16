@@ -147,9 +147,8 @@ function IndividualSubDomain({domain, searchdata}) {
   const sendGetRequestWord = async () => {
     try {
         const datawordcloud = await axios.
-        get(`//3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
+        get(`http://3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(`https://futureverz.herokuapp.com/api/Individual/wordcloud/` + domain.toLowerCase() + '/');
           console.log(res);
           console.log('success wordcloud subdomain');
           const wordcloudwords = res.data;
@@ -166,9 +165,8 @@ function IndividualSubDomain({domain, searchdata}) {
   const sendGetRequestWord2 = async () => {
     try {
         const datawordcloud = await axios.
-        get(`//3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
+        get(`http://3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(`https://futureverz.herokuapp.com/api/Individual/wordcloud/` + domain.toLowerCase() + '/');
           console.log(res);
           console.log('success wordcloud subdomain');
           const wordcloudwords = res.data;
