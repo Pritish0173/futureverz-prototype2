@@ -1,11 +1,7 @@
 import React, { useState, Suspense } from 'react';
-// import Box from '@mui/material/Box';
-// import Grid from '@mui/material/Grid';
-// import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-// import Wordcloud from './Wordcloud/Wordcloud';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import GovernmentDomain from '../GovernmentDomain';
 import GraphTab from './GraphTabs/GraphTabs';
@@ -78,7 +74,6 @@ function CompaniesSubDomain({domain}) {
           <Suspense fallback={<Loader />}>
             <Wordcloud domain={domain}/>
           </Suspense>
-          {/* <Wordcloud domain={domain}/> */}
         </div>
         <br></br>
         <br></br>

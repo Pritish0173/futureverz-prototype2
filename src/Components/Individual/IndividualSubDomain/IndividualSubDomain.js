@@ -139,8 +139,6 @@ function IndividualSubDomain({domain, searchdata}) {
   const [value, setValue] = useState(null);
   const [inputValue, setInputValue] = useState('');
   const [reset,setReset] = useState(false);
-  // console.log('subdomain domain: ' + domain);
-  // console.log('subdomain lowercase domain: ' + domain.toLowerCase());
   
   const searchlabel = 'Showing results for ' + domain
 
@@ -149,8 +147,6 @@ function IndividualSubDomain({domain, searchdata}) {
         const datawordcloud = await axios.
         get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(res);
-          console.log('success wordcloud subdomain');
           const wordcloudwords = res.data;
           setWords(wordcloudwords);
         })
@@ -167,8 +163,6 @@ function IndividualSubDomain({domain, searchdata}) {
         const datawordcloud = await axios.
         get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/wordcloud/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(res);
-          console.log('success wordcloud subdomain');
           const wordcloudwords = res.data;
           setWords(wordcloudwords);
         })
@@ -201,10 +195,6 @@ function IndividualSubDomain({domain, searchdata}) {
             setValue(word.text);
           }
         })
-      //   .transition()
-      //   .attr("background", "white")
-      //   .attr("font-size", isActive ? "300%" : "100%")
-      //   .attr("text-decoration", isActive ? "underline" : "none");
     };
   }
   
@@ -232,10 +222,6 @@ function IndividualSubDomain({domain, searchdata}) {
     setReset(true);
   }
 
-  // if(value !== null){
-  //   setDomain(value);
-  // }
-// !(data.some(item => domain === item))|
   if(reset) {
     return(
       <IndividualDomain />

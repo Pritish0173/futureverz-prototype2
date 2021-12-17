@@ -5,9 +5,6 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './GraphTabs.css';
-// import { HorizontalBar } from 'react-chartjs-2';
-// import 'chart.js/auto';
-// import { Chart } from 'react-chartjs-2';
 import HorizontalBar from './HorizontalBar';
 import graph from './GraphData.json';
 
@@ -55,9 +52,7 @@ function GraphTabs({domain}) {
 
   let dataHorBar = graph.filter(word => word.domain===domain);
   dataHorBar = dataHorBar[0];
-  console.log(dataHorBar);
   const domaindata = dataHorBar.graphData
-  console.log(domaindata);
   const companies = domaindata.Companies
   const skills = domaindata.Skills
   const institutions = domaindata.Institutions
@@ -80,8 +75,6 @@ function GraphTabs({domain}) {
           <Tab label="Curriculam Planning" {...a11yProps(0)} style={{color: 'slateblue', fontWeight: 'bold'}}/>
           <Tab label="Research" {...a11yProps(1)} style={{color: 'slateblue', fontWeight: 'bold'}} />
           <Tab label="Collaborate" {...a11yProps(2)} style={{color: 'slateblue', fontWeight: 'bold'}}/>
-          {/* <Tab label="Skills" {...a11yProps(3)} style={{color: 'slateblue', fontWeight: 'bold'}}/>
-          <Tab label="Research" {...a11yProps(4)} style={{color: 'slateblue', fontWeight: 'bold'}}/> */}
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

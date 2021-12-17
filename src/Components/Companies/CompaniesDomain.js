@@ -1,15 +1,10 @@
 import React,{ useState, Suspense} from 'react';
-// import Box from '@mui/material/Box';
-// import Grid from '@mui/material/Grid';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-// import Wordcloud from './Wordcloud';
 import CompaniesSubDomain from './CompaniesSubDomain/CompaniesSubDomain';
 import "d3-transition";
 import { select } from "d3-selection";
-// import React from "react";
-// import ReactWordcloud from "react-wordcloud";
 import "./wordcloud.css";
 import words from "./words";
 import "tippy.js/dist/tippy.css";
@@ -41,10 +36,6 @@ function CompaniesDomain() {
             setValue(word.text);
           }
         })
-      //   .transition()
-      //   .attr("background", "white")
-      //   .attr("font-size", isActive ? "300%" : "100%")
-      //   .attr("text-decoration", isActive ? "underline" : "none");
     };
   }
   
@@ -128,7 +119,6 @@ function CompaniesDomain() {
           <Suspense fallback={<Loader />}>
             <ReactWordcloud callbacks={callbacks} words={words} options={options} />
           </Suspense>
-            {/* <ReactWordcloud callbacks={callbacks} words={words} options={options} /> */}
         </div>
         <br></br>
         <br></br>

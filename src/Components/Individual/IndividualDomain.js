@@ -121,17 +121,6 @@ ListboxComponent.propTypes = {
   children: PropTypes.node,
 };
 
-// function random(length) {
-//   const characters =
-//     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//   let result = '';
-
-//   for (let i = 0; i < length; i += 1) {
-//     result += characters.charAt(Math.floor(Math.random() * characters.length));
-//   }
-
-//   return result;
-// }
 
 const StyledPopper = styled(Popper)({
   [`& .${autocompleteClasses.listbox}`]: {
@@ -153,7 +142,6 @@ function IndividualDomain() {
         const datasearchdata = await axios.
         get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/searchdata/`)
         .then(res => {
-          console.log(res)
           const search = res.data;
           setSearchData(search);
         })
@@ -170,7 +158,6 @@ function IndividualDomain() {
         const datasearchdata = await axios.
         get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/searchdata/`)
         .then(res => {
-          console.log(res)
           const search = res.data;
           setSearchData(search);
         })
@@ -187,7 +174,6 @@ function IndividualDomain() {
       const datawordcloud = await axios.
       get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/wordcloud`)
       .then(res => {
-        console.log(res)
         const wordcloudwords = res.data;
         setWords(wordcloudwords);
       })
@@ -204,7 +190,6 @@ function IndividualDomain() {
       const datawordcloud = await axios.
       get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/wordcloud`)
       .then(res => {
-        console.log(res)
         const wordcloudwords = res.data;
         setWords(wordcloudwords);
       })
@@ -239,10 +224,6 @@ function IndividualDomain() {
             setValue(word.text);
           }
         })
-      //   .transition()
-      //   .attr("background", "white")
-      //   .attr("font-size", isActive ? "300%" : "100%")
-      //   .attr("text-decoration", isActive ? "underline" : "none");
     };
   }
   

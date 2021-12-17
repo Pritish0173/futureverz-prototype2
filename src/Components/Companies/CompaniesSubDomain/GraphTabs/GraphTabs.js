@@ -5,9 +5,6 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './GraphTabs.css';
-// import { HorizontalBar } from 'react-chartjs-2';
-// import 'chart.js/auto';
-// import { Chart } from 'react-chartjs-2';
 import HorizontalBar from './HorizontalBar';
 import graph from './GraphData.json';
 
@@ -55,12 +52,8 @@ function GraphTabs({domain}) {
 
   let dataHorBar = graph.filter(word => word.domain===domain);
   dataHorBar = dataHorBar[0];
-  console.log(dataHorBar);
   const domaindata = dataHorBar.graphData
-  console.log(domaindata);
   const companies = domaindata.Companies
-  // const skills = domaindata.Skills
-  // const postings = domaindata.Postings
   const investments = domaindata.Investments
   const institutions = domaindata.Institutions
   const countries = domaindata.Countries
@@ -95,10 +88,6 @@ function GraphTabs({domain}) {
         <br></br>
         <h4 className="graphheader">Top 10 Contributors in {domain}</h4>
         <HorizontalBar data={companies} />
-        {/* <br></br>
-        <br></br>
-        <h4 className="graphheader">Top job posting companies in {domain}</h4>
-        <HorizontalBar data={postings} /> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
         <h4 className="graphheader">Top VC investors in {domain}</h4>

@@ -54,8 +54,6 @@ function GraphTabs({domain}) {
         const datagraph = await axios.
         get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(res);
-          console.log('success graph');
           const graphdata = res.data;
           setGraph(graphdata);
         })
@@ -72,8 +70,6 @@ function GraphTabs({domain}) {
         const datagraph = await axios.
         get(`https://cors-everywhere.herokuapp.com/http://3.110.131.196:8080/api/Individual/graph/` + domain.toLowerCase() + '/')
         .then(res => {
-          console.log(res);
-          console.log('success graph');
           const graphdata = res.data;
           setGraph(graphdata);
         })
@@ -92,15 +88,6 @@ function GraphTabs({domain}) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  // console.log(graph);
-  // const companies = graph.Companies
-  // const skills = graph.Skills
-  // const postings = graph.Postings
-  // const investments = graph.Investments
-  // const institutions = graph.Institutions
-  // const countries = graph.Countries
-  // const trends = graph.Trends
 
   
   if(graph===null){
@@ -131,37 +118,30 @@ function GraphTabs({domain}) {
         <TabPanel value={value} index={0}>
           <h4 className="graphheader">Top companies to work in {domain}</h4>
           <HorizontalBar data={graph.Companies} />
-          {/* <Chart type='bar' data={dataHorBar} style={{backgroundColor: 'white'}}/> */}
           <br></br>
           <br></br>
           <h4 className="graphheader">Trending skills in {domain}</h4>
           <HorizontalBar data={graph.Skills} />
-          {/* <Chart type='bar' data={dataHorBar} style={{backgroundColor: 'white'}}/> */}
           <br></br>
           <br></br>
           <h4 className="graphheader">Top job posting companies in {domain}</h4>
           <HorizontalBar data={graph.Postings} />
-          {/* <Chart type='bar' data={dataHorBar} style={{backgroundColor: 'white'}}/> */}
         </TabPanel>
         <TabPanel value={value} index={1}>
           <h4 className="graphheader">Invest stocks on companies(filing more patents and VC funds)</h4>
           <HorizontalBar data={graph.Investments} />
-          {/* <Chart type='bar' data={dataHorBar} /> */}
         </TabPanel>
         <TabPanel value={value} index={2}>
           <h4 className="graphheader">Top institutions in {domain}</h4>
           <HorizontalBar data={graph.Institutions} />
-          {/* <Chart type='bar' data={dataHorBar} /> */}
         </TabPanel>
         <TabPanel value={value} index={3}>
           <h4 className="graphheader">Active countries in {domain}</h4>
           <HorizontalBar data={graph.Countries} />
-          {/* <Chart type='bar' data={dataHorBar} /> */}
         </TabPanel>
         <TabPanel value={value} index={4}>
           <h4 className="graphheader">Publication trends over 5 years in {domain}</h4>
           <HorizontalBar data={graph.Trends} />
-          {/* <Chart type='bar' data={dataHorBar} /> */}
         </TabPanel>
       </div>
     ); 

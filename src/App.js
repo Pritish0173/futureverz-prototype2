@@ -1,8 +1,5 @@
 import './App.css';
 import React from 'react';
-// import Card from 'react-bootstrap/Card';
-// import Grid from '@mui/material/Grid';
-// import Button from '@mui/material/Button';
 import Home from './Home';
 import Individual from './Components/Individual/Individual';
 import Companies from './Components/Companies/Companies';
