@@ -10,6 +10,8 @@ import {
   Route
 } from "react-router-dom";
 
+// Some comment added
+
 function App() {
   return (
     <Routes>
